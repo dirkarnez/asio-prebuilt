@@ -26,10 +26,12 @@ jobs:
         #     name: "msvc2019"
         #   }
 
+ #-DASIO_DISABLE_EPOLL -DASIO_DISABLE_KQUEUE
+ 
     runs-on: windows-latest
     env:
       CXX: g++
-      CXXFLAGS: -Wall -Wextra -DASIO_DISABLE_EPOLL -DASIO_DISABLE_KQUEUE
+      CXXFLAGS: -Wall -Wextra -D_WIN32_WINNT=0x0601
       libraryName: asio
       installationPath: asio-installation
       tagName: asio-1-28-2
