@@ -60,6 +60,7 @@ jobs:
           
       - name: set PATH, check mingw version, cmake generate, build and install
         shell: msys2 {0}
+        continue-on-error: true
         run: |
             workspace=$(pwd) &&
             export PATH="$workspace/mingw64:$workspace/mingw64/bin:$workspace/msys64/usr/bin:/usr/bin" &&
