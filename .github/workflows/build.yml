@@ -71,6 +71,9 @@ jobs:
             ./configure --enable-separate-compilation --prefix="$(pwd)/${{ env.installationPath }}" &&
             make && 
             make install
+
+      - shell: cmd
+        run: cd asio\asio && dir /s
             
       # - name: copy customized openssl-config.cmake
       #   shell: cmd
